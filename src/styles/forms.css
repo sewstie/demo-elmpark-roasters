@@ -49,7 +49,24 @@
 .field { display: grid; gap: 7px; align-content: start; min-width: 0; }
 .field small { font-weight: 400; color: var(--color-muted); }
 .field textarea { resize: vertical; }
-.field input, .field select, .field textarea { width: 100%; min-height: 48px; padding: 11px 13px; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-background); color: var(--color-foreground); font-size: 1rem; font-weight: 400; }
+.field input, .field select, .field textarea, .field .date-button { width: 100%; min-height: 48px; padding: 11px 13px; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-background); color: var(--color-foreground); font-size: 1rem; font-weight: 400; }
+/* The calendar is our own popover so it matches the dropdown list on every browser; it sits under its button where anchor positioning exists and centers on screen elsewhere. */
+.field .date-button { display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: left; anchor-name: --date-button; }
+.date-button[data-empty] { color: var(--color-muted); }
+.date-button svg { flex-shrink: 0; color: var(--color-muted); }
+.calendar { width: min(334px, calc(100vw - 16px)); padding: 12px; border: 1px solid var(--color-border); border-radius: 10px; background: var(--color-background); color: var(--color-foreground); box-shadow: 0 16px 32px -16px rgb(42 28 21 / .45); }
+.calendar-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; font-size: .95rem; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.calendar-grid span { padding-block: 6px; text-align: center; color: var(--color-muted); font-size: .72rem; font-weight: 700; }
+.calendar button { display: grid; place-items: center; min-width: 44px; min-height: 44px; padding: 0; border: 0; border-radius: 6px; background: transparent; color: inherit; font-size: .9rem; }
+.calendar-grid button { min-width: 0; }
+.calendar button:hover { background: var(--color-secondary); }
+.calendar button[aria-pressed="true"] { background: var(--color-primary); color: var(--color-primary-foreground); font-weight: 700; }
+.calendar button[aria-disabled="true"] { background: transparent; opacity: .35; cursor: not-allowed; }
+@supports (top: anchor(bottom)) {
+  .calendar { position-anchor: --date-button; inset: auto; top: calc(anchor(bottom) + 6px); left: anchor(left); margin: 0; position-try-fallbacks: flip-block; }
+  @media (max-width: 600px) { .calendar { left: 0; right: 0; margin-inline: auto; } }
+}
 /* One dropdown look everywhere: the closed control is fully ours; browsers with customizable selects also get the themed list, the rest (iOS Safari, Firefox) keep their native picker. */
 select:not([multiple]) { appearance: none; padding-right: 40px; cursor: pointer; text-overflow: ellipsis; background-repeat: no-repeat; background-size: 6px 6px; background-position: right 19px center, right 13px center; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%); }
 select:has(option[value=""]:checked) { color: var(--color-muted); }

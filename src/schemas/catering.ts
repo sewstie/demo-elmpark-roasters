@@ -10,7 +10,7 @@ export const cateringSchema = z.object({
   timeWindows: z.array(z.object({ id, open: time, close: time }).refine(value => value.open < value.close, 'Window must start before it ends.')).min(1).max(8),
   steps: z.object({ order: step, details: step, review: step }),
   fields: texts(
-    'headcount', 'decrease', 'increase', 'headcountHint', 'box', 'perPerson', 'date', 'dateHint', 'time', 'timePlaceholder',
+    'headcount', 'decrease', 'increase', 'headcountHint', 'box', 'perPerson', 'date', 'datePlaceholder', 'previousMonth', 'nextMonth', 'dateHint', 'time', 'timePlaceholder',
     'fulfillment', 'pickup', 'delivery', 'address', 'deliveryNote', 'notes', 'notesPlaceholder', 'optional',
     'name', 'company', 'contact', 'contactHint',
   ),

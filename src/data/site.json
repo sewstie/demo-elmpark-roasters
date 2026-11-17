@@ -76,7 +76,7 @@
     "steps": { "order": { "short": "Order", "title": "Your order" }, "details": { "short": "Details", "title": "Your details" }, "review": { "short": "Review", "title": "Review" } },
     "fields": {
       "headcount": "Headcount", "decrease": "Remove one guest", "increase": "Add one guest", "headcountHint": "guests per order",
-      "box": "Box style", "perPerson": "per person", "date": "Event date", "dateHint": "Orders need at least 2 days’ notice.",
+      "box": "Box style", "perPerson": "per person", "date": "Event date", "datePlaceholder": "Select a date", "previousMonth": "Previous month", "nextMonth": "Next month", "dateHint": "Orders need at least 2 days’ notice.",
       "time": "Time window", "timePlaceholder": "Select a time window",
       "fulfillment": "Pickup or delivery", "pickup": "Pickup", "delivery": "Delivery",
       "address": "Delivery street address", "deliveryNote": "We deliver within 5 miles of the café.",

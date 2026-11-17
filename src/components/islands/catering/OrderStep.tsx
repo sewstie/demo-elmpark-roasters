@@ -5,12 +5,13 @@ import type { Lead } from '../../../schemas/lead';
 import { money } from '../../../lib/pricing';
 import { range } from '../../../lib/hours';
 import Field from './Field';
+import DatePicker from './DatePicker';
 
 interface Props { form: UseFormReturn<Lead>; catering: Catering; minDate: string }
 export default function OrderStep({ form, catering, minDate }: Props) {
   const { register, setValue, watch, formState: { errors } } = form;
   const { fields, minHeadcount: min, maxHeadcount: max } = catering;
-  const [headcount, boxId, fulfillment] = watch(['headcount', 'boxId', 'fulfillment']);
+  const [headcount, boxId, fulfillment, eventDate] = watch(['headcount', 'boxId', 'fulfillment', 'eventDate']);
   const current = Number.isFinite(headcount) ? headcount : min;
   const change = (delta: number) => setValue('headcount', Math.min(max, Math.max(min, current + delta)), { shouldValidate: true });
   // Defaults mirror the form state: the prerendered HTML shows them, and coming Back keeps the visitor's choices.
@@ -29,7 +30,13 @@ export default function OrderStep({ form, catering, minDate }: Props) {
       <input type="radio" value={item.id} defaultChecked={item.id === boxId} {...register('boxId')} /><span><strong>{item.name}</strong><small>{item.description}</small></span><strong>{money(item.pricePerPerson)}<small>{fields.perPerson}</small></strong>
     </label>)}</fieldset>
     <div className="form-grid">
-      <Field name="eventDate" label={fields.date} hint={fields.dateHint} errors={errors}>{control => <input type="date" min={minDate} {...register('eventDate')} {...control} />}</Field>
+      <div className="field">
+        <label htmlFor="catering-date">{fields.date}</label>
+        <DatePicker id="catering-date" value={eventDate} min={minDate} buttonRef={register('eventDate').ref} onChange={value => setValue('eventDate', value, { shouldValidate: true, shouldDirty: true })}
+          labels={{ placeholder: fields.datePlaceholder, previous: fields.previousMonth, next: fields.nextMonth }} invalid={!!errors.eventDate} describedBy="eventDate-hint eventDate-error" />
+        <span id="eventDate-hint" className="field-hint">{fields.dateHint}</span>
+        <span id="eventDate-error" className="field-error">{errors.eventDate?.message}</span>
+      </div>
       <Field name="timeWindowId" label={fields.time} errors={errors}>{control => <select {...register('timeWindowId')} {...control}>
         <option value="">{fields.timePlaceholder}</option>
         {catering.timeWindows.map(item => <option key={item.id} value={item.id}>{range(item)}</option>)}
