@@ -1,0 +1,32 @@
+---
+import { ArrowUpRight, ArrowDown, Check, Coffee, Croissant, Leaf, Users } from 'lucide-react';
+import type { Site } from '../../schemas/site';
+import { money } from '../../lib/pricing';
+interface Props { hero: Site['hero']; menu: Site['menu'] }
+const { hero, menu } = Astro.props;
+const icons = [Coffee, Croissant, Leaf, Users];
+const specials = menu.items.filter(item => item.category === hero.specialsCategory).slice(0, 4);
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="section-shell hero-inner">
+    <div>
+      <p class="hero-eyebrow">{hero.eyebrow}</p>
+      <h1 id="hero-title">{hero.heading}</h1>
+      <p class="hero-copy">{hero.description}</p>
+      <div class="hero-buttons">
+        <a class="button button-primary" href="#menu">{hero.primaryCta}<ArrowUpRight size={18} aria-hidden="true" /></a>
+        <a class="text-link" href="#catering">{hero.secondaryCta}<ArrowDown size={15} aria-hidden="true" /></a>
+      </div>
+      <p class="hero-note"><Check size={13} aria-hidden="true" />{hero.note}</p>
+    </div>
+    <aside class="hero-card" aria-labelledby="specials-title">
+      <h2 id="specials-title">{hero.specialsLabel}</h2>
+      <ul>{specials.map(item => <li><span>{item.name}</span><strong>{money(item.price)}</strong></li>)}</ul>
+    </aside>
+  </div>
+</section>
+<div class="service-strip">
+  <div class="section-shell service-strip-inner">
+    {hero.specialties.map((item, index) => { const Icon = icons[index % icons.length]; return <span><Icon size={20} strokeWidth={1.5} aria-hidden="true" />{item}</span>; })}
+  </div>
+</div>

@@ -1,0 +1,19 @@
+---
+import { MapPin } from 'lucide-react';
+import type { Site } from '../schemas/site';
+import { directionsUrl } from '../lib/paths';
+interface Props { business: Site['business']; directionsCta: string }
+const { business, directionsCta } = Astro.props;
+---
+<div class="status-bar">
+  <div class="section-shell status-inner">
+    <p id="open-status" role="status" data-hours={JSON.stringify(business.hours)} data-time-zone={business.timeZone}></p>
+    <ul>{business.indicators.map(item => <li class={item.active ? 'is-on' : 'is-off'}>{item.label}{!item.active && <span class="sr-only"> (not right now)</span>}</li>)}</ul>
+    <a href={directionsUrl(business)} target="_blank" rel="noopener"><MapPin size={16} aria-hidden="true" />{directionsCta}</a>
+  </div>
+</div>
+<script>
+  import { statusLabel } from '../lib/hours';
+  const status = document.getElementById('open-status');
+  if (status) status.textContent = statusLabel(JSON.parse(status.dataset.hours ?? '[]'), status.dataset.timeZone ?? 'UTC');
+</script>

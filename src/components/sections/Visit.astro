@@ -1,0 +1,20 @@
+---
+import { ArrowUpRight, Phone, MapPin } from 'lucide-react';
+import type { Site } from '../../schemas/site';
+import { address, directionsUrl } from '../../lib/paths';
+import { DAY_NAMES, range } from '../../lib/hours';
+interface Props { site: Site }
+const { site } = Astro.props;
+const { business, visit } = site;
+---
+<section id="visit" class="visit-section section-space" aria-labelledby="visit-title">
+  <div class="section-shell visit-grid">
+    <div><p class="section-label">{visit.label}</p><h2 id="visit-title" class="whitespace-pre-line">{visit.heading}</h2><p class="section-description">{visit.description}</p>
+      <div class="hero-buttons"><a href={directionsUrl(business)} target="_blank" rel="noopener" class="button button-primary">{visit.directionsCta}<ArrowUpRight size={18} aria-hidden="true" /></a><a href={`tel:${business.phone}`} class="text-link"><Phone size={16} aria-hidden="true" />{business.phoneDisplay}</a></div>
+    </div>
+    <div class="visit-info">
+      <p class="visit-address"><MapPin size={20} strokeWidth={1.5} aria-hidden="true" />{address(business)}</p>
+      <dl>{[1, 2, 3, 4, 5, 6, 0].map(index => <div><dt>{DAY_NAMES[index]}</dt><dd>{range(business.hours[index])}</dd></div>)}</dl>
+    </div>
+  </div>
+</section>
