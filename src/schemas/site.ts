@@ -8,7 +8,7 @@ const named = z.object({ id, name: text });
 export const siteSchema = z.object({
   demoMode: z.boolean(),
   demoBanner: z.boolean(),
-  banner: z.object({ text, href: z.url().refine(value => value.startsWith('https://')) }),
+  banner: z.object({ text, shortText: text, href: z.url().refine(value => value.startsWith('https://')), dismissLabel: text }),
   business: z.object({
     name: text, shortName: text, descriptor: text, phone, phoneDisplay: text, email: z.email(),
     street: text, city: text, region: z.string().length(2), postalCode: z.string().regex(/^\d{5}$/), serviceArea: text,

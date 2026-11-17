@@ -1,7 +1,7 @@
 {
   "demoMode": true,
   "demoBanner": true,
-  "banner": { "text": "Demo site by Vladislav Hushcha — want one for your business? →", "href": "https://web.vladislavhushcha.me" },
+  "banner": { "text": "Demo site by Vladislav Hushcha — want one for your business? →", "shortText": "Demo by Vladislav Hushcha · Get yours →", "href": "https://web.vladislavhushcha.me", "dismissLabel": "Dismiss demo notice" },
   "business": {
     "name": "Elm Park Roasters & Artisan Bakery", "shortName": "Elm Park Roasters", "descriptor": "Coffee roasters & artisan bakery",
     "phone": "+15085550148", "phoneDisplay": "(508) 555-0148", "email": "hello@elmparkroasters.example",
