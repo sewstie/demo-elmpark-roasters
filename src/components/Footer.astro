@@ -14,3 +14,10 @@ const { site } = Astro.props;
   </div>
 </footer>
 <div class="mobile-contact"><a href={`tel:${site.business.phone}`} class="button button-secondary"><Phone size={17} aria-hidden="true" />{site.business.phoneDisplay}</a><a href="#menu" class="button button-primary">{site.hero.primaryCta}<ArrowUpRight size={17} aria-hidden="true" /></a></div>
+
+<script>
+  // The catering form has its own sticky total and actions; slide the call bar away while that section is on screen.
+  const bar = document.querySelector<HTMLElement>('.mobile-contact');
+  const catering = document.getElementById('catering');
+  if (bar && catering) new IntersectionObserver(([entry]) => { bar.inert = entry.isIntersecting; }).observe(catering);
+</script>

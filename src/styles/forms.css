@@ -57,5 +57,4 @@
 .form-footnote { color: var(--color-muted); font-size: .75rem; text-align: center; margin-inline: auto; }
 .form-success > svg { color: var(--color-success); }.form-success .catering-total { position: static; }
 .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-@media (max-width: 760px) { .catering-total { bottom: calc(80px + env(safe-area-inset-bottom)); } }
 @media (max-width: 600px) { .catering-form { padding: 22px 16px; }.form-grid { grid-template-columns: 1fr; }.review-rows div { grid-template-columns: 1fr; gap: 0; } }
