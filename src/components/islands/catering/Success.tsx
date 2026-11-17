@@ -2,7 +2,7 @@ import type { RefObject } from 'react';
 import { CalendarPlus, CheckCircle2 } from 'lucide-react';
 import type { Site } from '../../../schemas/site';
 import type { Lead } from '../../../schemas/lead';
-import { calendarFile, orderSummary } from '../../../lib/catering';
+import { calendarFile, orderSummary, type Row } from '../../../lib/catering';
 import { money } from '../../../lib/pricing';
 import { address } from '../../../lib/paths';
 import { Rows } from './ReviewStep';
@@ -13,7 +13,10 @@ export default function Success({ lead, catering, business, demo, heading, onRes
   const summary = orderSummary(lead, catering, address(business));
   const rows = [...summary.order, ...summary.details];
   const total = money(summary.total);
-  const email = [`To: ${business.email}`, `Subject: ${success.emailSubject}: ${summary.line}`, '', ...rows.map(row => row.join(': ')), `${totalLabel}: ${total}`].join('\n');
+  // The owner's copy uses owner-facing labels ("Name", not "Your name") and a timestamp on the shop's clock.
+  const customer = ([[success.emailName, lead.name], [success.emailCompany, lead.company], [success.emailContact, lead.contact]] satisfies Row[]).filter(([, value]) => value);
+  const submitted = new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: business.timeZone });
+  const email = [`To: ${business.email}`, `Subject: ${success.emailSubject}: ${summary.line}`, '', ...[...summary.order, ...customer].map(row => row.join(': ')), `${totalLabel}: ${total}`, `${success.emailSubmitted}: ${submitted}`].join('\n');
   return <div className="catering-form form-success">
     {demo && <p className="demo-tag">{success.demoTag}</p>}
     <CheckCircle2 size={36} aria-hidden="true" />

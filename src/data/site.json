@@ -79,7 +79,7 @@
       "name": "Your name", "company": "Company", "contact": "Email or phone", "contactHint": "One is enough. We’ll use it to confirm your order."
     },
     "actions": { "back": "Back", "next": "Continue", "edit": "Edit", "submit": "Send catering inquiry", "sending": "Sending inquiry…", "calendar": "Add to calendar", "restart": "Start another order" },
-    "success": { "title": "Inquiry sent.", "body": "We’ll confirm within 1 business day.", "demoTag": "Demo — nothing was sent", "emailTitle": "What the owner receives", "emailSubject": "New catering inquiry", "calendarTitle": "Catering order" }
+    "success": { "title": "Inquiry sent.", "body": "We’ll confirm within 1 business day.", "demoTag": "Demo — nothing was sent", "emailTitle": "What the owner receives", "emailSubject": "New catering inquiry", "emailName": "Name", "emailCompany": "Company", "emailContact": "Contact", "emailSubmitted": "Submitted", "calendarTitle": "Catering order" }
   },
   "reviews": {
     "label": "From the neighborhood", "heading": "Regulars say it best.", "disclaimer": "Sample testimonials for this demo. Not verified customer reviews.",

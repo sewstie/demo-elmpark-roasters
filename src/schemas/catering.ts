@@ -15,7 +15,7 @@ export const cateringSchema = z.object({
     'name', 'company', 'contact', 'contactHint',
   ),
   actions: texts('back', 'next', 'edit', 'submit', 'sending', 'calendar', 'restart'),
-  success: texts('title', 'body', 'demoTag', 'emailTitle', 'emailSubject', 'calendarTitle'),
+  success: texts('title', 'body', 'demoTag', 'emailTitle', 'emailSubject', 'emailName', 'emailCompany', 'emailContact', 'emailSubmitted', 'calendarTitle'),
 });
 export type Catering = z.infer<typeof cateringSchema>;
 export type Box = Catering['boxes'][number];
