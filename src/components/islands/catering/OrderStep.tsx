@@ -10,22 +10,23 @@ interface Props { form: UseFormReturn<Lead>; catering: Catering; minDate: string
 export default function OrderStep({ form, catering, minDate }: Props) {
   const { register, setValue, watch, formState: { errors } } = form;
   const { fields, minHeadcount: min, maxHeadcount: max } = catering;
-  const [headcount, fulfillment] = watch(['headcount', 'fulfillment']);
+  const [headcount, boxId, fulfillment] = watch(['headcount', 'boxId', 'fulfillment']);
   const current = Number.isFinite(headcount) ? headcount : min;
   const change = (delta: number) => setValue('headcount', Math.min(max, Math.max(min, current + delta)), { shouldValidate: true });
+  // Defaults mirror the form state: the prerendered HTML shows them, and coming Back keeps the visitor's choices.
   return <>
     <div className="field">
       <label htmlFor="catering-headcount">{fields.headcount}</label>
       <div className="stepper">
         <button type="button" onClick={() => change(-1)} aria-disabled={current <= min} aria-label={fields.decrease}><Minus size={18} aria-hidden="true" /></button>
-        <input id="catering-headcount" type="number" inputMode="numeric" min={min} max={max} {...register('headcount', { valueAsNumber: true })} aria-invalid={!!errors.headcount} aria-describedby="headcount-hint headcount-error" />
+        <input id="catering-headcount" type="number" inputMode="numeric" min={min} max={max} defaultValue={current} {...register('headcount', { valueAsNumber: true })} aria-invalid={!!errors.headcount} aria-describedby="headcount-hint headcount-error" />
         <button type="button" onClick={() => change(1)} aria-disabled={current >= max} aria-label={fields.increase}><Plus size={18} aria-hidden="true" /></button>
       </div>
       <span id="headcount-hint" className="field-hint">{min}–{max} {fields.headcountHint}</span>
       <span id="headcount-error" className="field-error">{errors.headcount?.message}</span>
     </div>
     <fieldset className="box-options"><legend>{fields.box}</legend>{catering.boxes.map(item => <label className="box-option" key={item.id}>
-      <input type="radio" value={item.id} {...register('boxId')} /><span><strong>{item.name}</strong><small>{item.description}</small></span><strong>{money(item.pricePerPerson)}<small>{fields.perPerson}</small></strong>
+      <input type="radio" value={item.id} defaultChecked={item.id === boxId} {...register('boxId')} /><span><strong>{item.name}</strong><small>{item.description}</small></span><strong>{money(item.pricePerPerson)}<small>{fields.perPerson}</small></strong>
     </label>)}</fieldset>
     <div className="form-grid">
       <Field name="eventDate" label={fields.date} hint={fields.dateHint} errors={errors}>{control => <input type="date" min={minDate} {...register('eventDate')} {...control} />}</Field>
@@ -35,7 +36,7 @@ export default function OrderStep({ form, catering, minDate }: Props) {
       </select>}</Field>
     </div>
     <fieldset className="segmented"><legend>{fields.fulfillment}</legend>
-      {(['pickup', 'delivery'] as const).map(value => <label key={value}><input type="radio" value={value} {...register('fulfillment')} /><span>{fields[value]}</span></label>)}
+      {(['pickup', 'delivery'] as const).map(value => <label key={value}><input type="radio" value={value} defaultChecked={value === fulfillment} {...register('fulfillment')} /><span>{fields[value]}</span></label>)}
     </fieldset>
     {fulfillment === 'delivery' && <Field name="address" label={fields.address} hint={fields.deliveryNote} errors={errors}>{control => <input autoComplete="street-address" {...register('address')} {...control} />}</Field>}
     <Field name="notes" label={fields.notes} optional={fields.optional} errors={errors}>{control => <textarea rows={3} placeholder={fields.notesPlaceholder} {...register('notes')} {...control} />}</Field>
