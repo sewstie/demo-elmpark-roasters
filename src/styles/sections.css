@@ -1,5 +1,12 @@
 .intro-grid { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 88px; }
 .intro-copy .section-description { margin-top: 0; }
+.intro-photos { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.intro-photos figure { margin: 0; }
+.intro-photos img, .visit-photo { display: block; width: 100%; height: auto; object-fit: cover; border-radius: 14px; }
+.intro-photos img { aspect-ratio: 3 / 2; }
+.intro-photos figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; margin-top: 12px; font-size: .9rem; font-weight: 600; }
+.intro-photos strong { font-variant-numeric: tabular-nums; }
+.visit-photo { aspect-ratio: 21 / 9; margin-bottom: 56px; }
 .section-heading, .reviews-heading { text-align: center; }
 .section-heading .section-description { margin-inline: auto; }
 .section-note { margin: 28px auto 0; text-align: center; color: var(--color-muted); font-size: .8rem; max-width: 720px; }
@@ -58,6 +65,7 @@
   .intro-grid, .catering-grid, .visit-grid, .faq-section { gap: 32px; }.review-grid { gap: 20px; }
   .section-heading, .reviews-heading { text-align: left; }.section-heading .section-description, .review-disclaimer { margin-inline: 0; }
   .menu-controls { justify-content: flex-start; gap: 8px; }.chip { padding-inline: 16px; }.section-note { text-align: left; }
+  .intro-photos { gap: 12px; }.intro-photos figcaption { font-size: .8rem; }.visit-photo { aspect-ratio: 3 / 2; margin-bottom: 32px; }
   .faq-section { padding-bottom: 64px; }.faq-section h2 { max-width: none; }
   .visit-info { border-left: 0; border-top: 1px solid var(--color-border); padding-top: 28px; padding-left: 0; }.footer-top { flex-wrap: wrap; }.footer-top nav { flex-wrap: wrap; }
   .footer-bottom { flex-wrap: wrap; gap: 5px 20px; }

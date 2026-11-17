@@ -1,13 +1,16 @@
 ---
+import { Image } from 'astro:assets';
 import { ArrowUpRight, Phone, MapPin } from 'lucide-react';
 import type { Site } from '../../schemas/site';
 import { address, directionsUrl } from '../../lib/paths';
+import { photo } from '../../lib/photos';
 import { DAY_NAMES, range } from '../../lib/hours';
 interface Props { site: Site }
 const { site } = Astro.props;
 const { business, visit } = site;
 ---
 <section id="visit" class="visit-section section-space" aria-labelledby="visit-title">
+  <div class="section-shell"><Image class="visit-photo" src={photo(visit.image.file)} alt={visit.image.alt} width={1200} widths={[400, 800, 1200]} sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1100px) calc(100vw - 64px), 1200px" quality={60} loading="lazy" /></div>
   <div class="section-shell visit-grid">
     <div><p class="section-label">{visit.label}</p><h2 id="visit-title" tabindex="-1" class="whitespace-pre-line">{visit.heading}</h2><p class="section-description">{visit.description}</p>
       <div class="hero-buttons"><a href={directionsUrl(business)} target="_blank" rel="noopener" class="button button-primary">{visit.directionsCta}<ArrowUpRight size={18} aria-hidden="true" /></a><a href={`tel:${business.phone}`} class="text-link"><Phone size={16} aria-hidden="true" />{business.phoneDisplay}</a></div>

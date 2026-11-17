@@ -21,7 +21,7 @@ const site = siteSchema.parse(data);
   <StatusBar business={site.business} directionsCta={site.visit.directionsCta} />
   <main id="main">
     <Hero hero={site.hero} menu={site.menu} />
-    <Intro intro={site.intro} />
+    <Intro intro={site.intro} menu={site.menu} />
     <MenuBoard menu={site.menu} client:visible />
     <Catering site={site} />
     <Reviews reviews={site.reviews} />

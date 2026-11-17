@@ -1,10 +1,17 @@
 ---
+import { Image } from 'astro:assets';
 import { ArrowUpRight } from 'lucide-react';
 import type { Site } from '../../schemas/site';
-interface Props { intro: Site['intro'] }
-const { intro } = Astro.props;
+import { money } from '../../lib/pricing';
+import { photo } from '../../lib/photos';
+interface Props { intro: Site['intro']; menu: Site['menu'] }
+const { intro, menu } = Astro.props;
 ---
 <section class="section-shell section-space intro-grid" aria-labelledby="intro-title">
   <div><p class="section-label">{intro.label}</p><h2 id="intro-title" tabindex="-1" class="whitespace-pre-line">{intro.heading}</h2></div>
   <div class="intro-copy"><p class="section-description">{intro.description}</p><a class="text-link mt-6" href="#menu">{intro.link}<ArrowUpRight size={17} aria-hidden="true" /></a></div>
+  <div class="intro-photos">{intro.photos.map(({ file, alt, item }) => { const dish = menu.items.find(entry => entry.id === item); return <figure>
+    <Image src={photo(file)} alt={alt} width={720} widths={[240, 480, 720]} sizes="(max-width: 760px) calc(50vw - 28px), 560px" quality={60} loading="lazy" />
+    {dish && <figcaption><span>{dish.name}</span><strong>{money(dish.price)}</strong></figcaption>}
+  </figure>; })}</div>
 </section>

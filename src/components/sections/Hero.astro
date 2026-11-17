@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import { ArrowUpRight, ArrowDown, Check, Coffee, Croissant, Leaf, Users } from 'lucide-react';
 import type { Site } from '../../schemas/site';
 import { money } from '../../lib/pricing';
+import { photo } from '../../lib/photos';
 interface Props { hero: Site['hero']; menu: Site['menu'] }
 const { hero, menu } = Astro.props;
 const icons = [Coffee, Croissant, Leaf, Users];
@@ -19,10 +21,13 @@ const specials = menu.items.filter(item => item.category === hero.specialsCatego
       </div>
       <p class="hero-note"><Check size={13} aria-hidden="true" />{hero.note}</p>
     </div>
-    <aside class="hero-card" aria-labelledby="specials-title">
-      <h2 id="specials-title">{hero.specialsLabel}</h2>
-      <ul>{specials.map(item => <li><span>{item.name}</span><strong>{money(item.price)}</strong></li>)}</ul>
-    </aside>
+    <div>
+      <Image class="hero-photo" src={photo(hero.image.file)} alt={hero.image.alt} width={800} widths={[400, 640, 800]} sizes="(max-width: 760px) calc(100vw - 40px), 420px" loading="eager" fetchpriority="high" />
+      <aside class="hero-card" aria-labelledby="specials-title">
+        <h2 id="specials-title">{hero.specialsLabel}</h2>
+        <ul>{specials.map(item => <li><span>{item.name}</span><strong>{money(item.price)}</strong></li>)}</ul>
+      </aside>
+    </div>
   </div>
 </section>
 <div class="service-strip">

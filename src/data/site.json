@@ -24,10 +24,15 @@
     "eyebrow": "Worcester’s neighborhood roastery & bakery", "heading": "Freshly roasted,\nlocally baked,\npouring daily.",
     "description": "Skip the PDF menu and order in seconds. Today’s espresso, pastries and seasonal specials are all right here, with live prices and dietary filters.",
     "primaryCta": "Browse the menu", "secondaryCta": "Price office catering", "note": "Roasted in small batches. Baked before sunrise.",
+    "image": { "file": "hero.jpg", "alt": "Barista pouring steamed milk into a latte, finishing a leaf pattern in the foam" },
     "specialsLabel": "On the specials board", "specialsCategory": "seasonal",
     "specialties": [ "Small-batch espresso", "Baked fresh daily", "Vegan & gluten-free options", "Office & event catering" ]
   },
-  "intro": { "label": "A proper neighborhood counter", "heading": "Good coffee shouldn’t\nneed a download.", "description": "No pinch-and-zoom PDFs, no guessing what’s left in the case. See what we’re pouring and baking today, filter for how you eat, and walk in knowing your order.", "link": "See today’s menu" },
+  "intro": { "label": "A proper neighborhood counter", "heading": "Good coffee shouldn’t\nneed a download.", "description": "No pinch-and-zoom PDFs, no guessing what’s left in the case. See what we’re pouring and baking today, filter for how you eat, and walk in knowing your order.", "link": "See today’s menu",
+    "photos": [
+      { "file": "latte.jpg", "alt": "Latte with rosetta latte art in a white cup, seen from above", "item": "elm-park-latte" },
+      { "file": "croissant.jpg", "alt": "Golden butter croissant on a white plate on a wooden table", "item": "butter-croissant" }
+    ] },
   "menu": {
     "label": "Today’s menu", "heading": "Pick a category. Filter how you eat.", "description": "Tap a category, then narrow by dietary need. Prices update the moment we change them.",
     "note": "Sample menu and prices for this demo. Our kitchen handles wheat, dairy, eggs and tree nuts. Please tell us about allergies when you order.",
@@ -96,6 +101,7 @@
     { "question": "Can you accommodate allergies?", "answer": "Use the vegan, gluten-free and nut-free filters to find options. Our kitchen handles wheat, dairy, eggs and tree nuts, so we can’t guarantee an allergen-free environment. Please ask our team before ordering." },
     { "question": "Do you deliver catering orders?", "answer": "Yes, we deliver to offices, campuses and events across Worcester County. Pickup from the shop is always available." }
   ] },
-  "visit": { "label": "Come say hello", "heading": "Find us by the park.", "description": "Stop in for a pour-over, grab a box for the office, or settle in with the Wi-Fi. Call ahead and we’ll have your order waiting.", "directionsCta": "Get directions" },
+  "visit": { "label": "Come say hello", "heading": "Find us by the park.", "description": "Stop in for a pour-over, grab a box for the office, or settle in with the Wi-Fi. Call ahead and we’ll have your order waiting.", "directionsCta": "Get directions",
+    "image": { "file": "interior.jpg", "alt": "Café interior with an exposed brick wall, warm pendant lights and a long wooden table" } },
   "footer": { "description": "Small-batch coffee & artisan pastries in Worcester, MA.", "copyright": "Elm Park Roasters & Artisan Bakery. All rights reserved.", "demoNotice": "Concept website for a fictional business. Sample menu, pricing, location and reviews. Catering inquiries are simulated in demo mode and nothing is sent." }
 }
