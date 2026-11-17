@@ -6,7 +6,7 @@ import StatusBar from '../components/StatusBar.astro';
 import Hero from '../components/sections/Hero.astro';
 import Intro from '../components/sections/Intro.astro';
 import MenuBoard from '../components/islands/MenuBoard';
-import CateringCalculator from '../components/islands/CateringCalculator';
+import Catering from '../components/sections/Catering.astro';
 import Reviews from '../components/sections/Reviews.astro';
 import Faq from '../components/sections/Faq.astro';
 import Visit from '../components/sections/Visit.astro';
@@ -23,7 +23,7 @@ const site = siteSchema.parse(data);
     <Hero hero={site.hero} menu={site.menu} />
     <Intro intro={site.intro} />
     <MenuBoard menu={site.menu} client:visible />
-    <CateringCalculator catering={site.catering} business={site.business} demo={site.demo} client:visible />
+    <Catering site={site} />
     <Reviews reviews={site.reviews} />
     <Faq faq={site.faq} />
     <Visit site={site} />

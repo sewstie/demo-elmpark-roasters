@@ -1,0 +1,11 @@
+---
+import type { Site } from '../../schemas/site';
+import CateringCalculator from '../islands/CateringCalculator';
+interface Props { site: Site }
+const { site } = Astro.props;
+const { catering } = site;
+---
+<section id="catering" class="section-shell section-space catering-grid" aria-labelledby="catering-title">
+  <div><p class="section-label">{catering.label}</p><h2 id="catering-title" tabindex="-1" class="whitespace-pre-line">{catering.heading}</h2><p class="section-description">{catering.description}</p><p class="catering-note">{catering.note}</p></div>
+  <CateringCalculator catering={catering} business={site.business} demoMode={site.demoMode} client:visible />
+</section>

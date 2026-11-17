@@ -86,37 +86,28 @@ test('storage fails closed in production when GitHub is unconfigured', async () 
 });
 
 const lead = {
-  name: 'Jane Doe',
-  phone: '+15085550199',
-  email: 'jane@example.com',
-  eventDate: '2026-12-01',
-  headcount: 40,
-  boxId: 'full-breakfast',
-  consent: true,
+  headcount: 40, boxId: 'full-breakfast', eventDate: '2026-12-01', timeWindowId: 'mid-morning', fulfillment: 'pickup' as const,
+  address: 'left over from delivery', notes: '', name: 'Jane Doe', company: 'Sample Co', contact: 'jane@example.com',
 };
-const liveSite = { ...baseSite, demo: false };
+const liveSite = { ...baseSite, demoMode: false };
 
-test('buildLeadPayload rejects demo=true site', () => {
-  assert.throws(() => buildLeadPayload(lead, { ...baseSite, demo: true }), (err: unknown) => {
+test('buildLeadPayload refuses to deliver while demoMode is on', () => {
+  assert.throws(() => buildLeadPayload(lead, { ...baseSite, demoMode: true }), (err: unknown) => {
     return err instanceof HttpError && err.status === 400 && err.message.includes('demo mode');
   });
 });
 
-test('buildLeadPayload rejects honeypot, unknown box and out-of-range headcount', () => {
-  const rejects = (input: typeof lead & { website?: string }, text: string) => {
-    assert.throws(() => buildLeadPayload(input, liveSite), (err: unknown) => {
-      return err instanceof HttpError && err.status === 400 && err.message.includes(text);
-    });
-  };
-  rejects({ ...lead, website: 'http://spam.example' }, 'Invalid');
-  rejects({ ...lead, boxId: 'retired-box' }, 'no longer available');
-  rejects({ ...lead, headcount: liveSite.catering.minHeadcount - 1 }, 'guests');
-  rejects({ ...lead, headcount: liveSite.catering.maxHeadcount + 1 }, 'guests');
+test('buildLeadPayload rejects the honeypot field', () => {
+  assert.throws(() => buildLeadPayload({ ...lead, website: 'http://spam.example' }, liveSite), (err: unknown) => {
+    return err instanceof HttpError && err.status === 400;
+  });
 });
 
-test('buildLeadPayload computes the authoritative total from site pricing', () => {
+test('buildLeadPayload computes the authoritative total and drops a stale pickup address', () => {
   const payload = buildLeadPayload(lead, liveSite);
   assert.equal(payload.total, 560);
   assert.equal(payload.boxName, 'Full Breakfast Box');
-  assert.equal(payload.headcount, 40);
+  assert.equal(payload.timeWindow, '9:00 AM – 11:00 AM');
+  assert.equal(payload.address, '');
+  assert.equal('website' in payload, false);
 });

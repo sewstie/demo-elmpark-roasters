@@ -1,5 +1,5 @@
 {
-  "demo": true,
+  "demoMode": true,
   "demoBanner": true,
   "banner": { "text": "Demo site by Vladislav Hushcha — want one for your business? →", "href": "https://web.vladislavhushcha.me" },
   "business": {
@@ -54,16 +54,32 @@
     ]
   },
   "catering": {
-    "label": "Office & event catering", "heading": "Feed the meeting.\nKnow the total first.", "description": "Enter your headcount, choose a box style and see your price instantly. Send the inquiry and we’ll confirm the details with you.",
-    "note": "Sample pricing for this demo. Totals are estimates before tax and delivery. Orders need 48 hours’ notice.",
-    "cta": "Send catering inquiry", "privacy": "I agree to be contacted about this catering inquiry. My details will not be used for marketing.",
-    "success": "Your inquiry has been sent. We’ll contact you to confirm the menu, timing and final price. Your order is not confirmed yet.", "error": "Your inquiry could not be sent. Please try again or call us directly.",
-    "minHeadcount": 8, "maxHeadcount": 150,
+    "label": "Office & event catering", "heading": "Feed the meeting.\nKnow the total first.", "description": "Enter your headcount, choose a box style and see your price instantly. Three quick steps, then we’ll confirm the details with you.",
+    "note": "Sample pricing for this demo. Totals are estimates before tax and delivery.",
+    "privacy": "We only use your details to reply to this inquiry. No marketing, ever.", "totalLabel": "Estimated total",
+    "error": "Your inquiry could not be sent. Please try again or call us directly.",
+    "minHeadcount": 8, "maxHeadcount": 150, "leadDays": 2,
     "boxes": [
       { "id": "morning-meeting", "name": "Morning Meeting Box", "description": "Fresh drip coffee, assorted pastries, cups and fixings.", "pricePerPerson": 9.5 },
       { "id": "full-breakfast", "name": "Full Breakfast Box", "description": "Coffee, pastries, yogurt parfaits and seasonal fruit.", "pricePerPerson": 14 },
       { "id": "afternoon-pick-me-up", "name": "Afternoon Pick-Me-Up", "description": "Cold brew, cookies and flourless brownies.", "pricePerPerson": 8 }
-    ]
+    ],
+    "timeWindows": [
+      { "id": "early-morning", "open": "07:00", "close": "09:00" }, { "id": "mid-morning", "open": "09:00", "close": "11:00" },
+      { "id": "midday", "open": "11:00", "close": "13:00" }, { "id": "afternoon", "open": "13:00", "close": "15:00" }
+    ],
+    "steps": { "order": { "short": "Order", "title": "Your order" }, "details": { "short": "Details", "title": "Your details" }, "review": { "short": "Review", "title": "Review" } },
+    "fields": {
+      "headcount": "Headcount", "decrease": "Remove one guest", "increase": "Add one guest", "headcountHint": "guests per order",
+      "box": "Box style", "perPerson": "per person", "date": "Event date", "dateHint": "Orders need at least 2 days’ notice.",
+      "time": "Time window", "timePlaceholder": "Select a time window",
+      "fulfillment": "Pickup or delivery", "pickup": "Pickup", "delivery": "Delivery",
+      "address": "Delivery street address", "deliveryNote": "We deliver within 5 miles of the café.",
+      "notes": "Dietary notes", "notesPlaceholder": "Allergies, vegan or gluten-free counts…", "optional": "optional",
+      "name": "Your name", "company": "Company", "contact": "Email or phone", "contactHint": "One is enough. We’ll use it to confirm your order."
+    },
+    "actions": { "back": "Back", "next": "Continue", "edit": "Edit", "submit": "Send catering inquiry", "sending": "Sending inquiry…", "calendar": "Add to calendar", "restart": "Start another order" },
+    "success": { "title": "Inquiry sent.", "body": "We’ll confirm within 1 business day.", "demoTag": "Demo — nothing was sent", "emailTitle": "What the owner receives", "emailSubject": "New catering inquiry", "calendarTitle": "Catering order" }
   },
   "reviews": {
     "label": "From the neighborhood", "heading": "Regulars say it best.", "disclaimer": "Sample testimonials for this demo. Not verified customer reviews.",
@@ -81,5 +97,5 @@
     { "question": "Do you deliver catering orders?", "answer": "Yes, we deliver to offices, campuses and events across Worcester County. Pickup from the shop is always available." }
   ] },
   "visit": { "label": "Come say hello", "heading": "Find us by the park.", "description": "Stop in for a pour-over, grab a box for the office, or settle in with the Wi-Fi. Call ahead and we’ll have your order waiting.", "directionsCta": "Get directions" },
-  "footer": { "description": "Small-batch coffee & artisan pastries in Worcester, MA.", "copyright": "Elm Park Roasters & Artisan Bakery. All rights reserved.", "demoNotice": "Concept website for a fictional business. Sample menu, pricing, location and reviews. Catering inquiries are disabled in demo mode." }
+  "footer": { "description": "Small-batch coffee & artisan pastries in Worcester, MA.", "copyright": "Elm Park Roasters & Artisan Bakery. All rights reserved.", "demoNotice": "Concept website for a fictional business. Sample menu, pricing, location and reviews. Catering inquiries are simulated in demo mode and nothing is sent." }
 }
