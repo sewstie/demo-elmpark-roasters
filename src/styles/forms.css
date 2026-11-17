@@ -49,7 +49,20 @@
 .field { display: grid; gap: 7px; align-content: start; min-width: 0; }
 .field small { font-weight: 400; color: var(--color-muted); }
 .field textarea { resize: vertical; }
-.field input, .field select, .field textarea { width: 100%; min-height: 48px; padding: 11px 13px; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-background); color: var(--color-foreground); font-size: 1rem; font-weight: 400; }
+.field input, .field select, .field textarea { width: 100%; min-height: 48px; padding: 11px 13px; border: 1px solid var(--color-border); border-radius: 8px; background-color: var(--color-background); color: var(--color-foreground); font-size: 1rem; font-weight: 400; }
+/* One dropdown look everywhere: the closed control is fully ours; browsers with customizable selects also get the themed list, the rest (iOS Safari, Firefox) keep their native picker. */
+select:not([multiple]) { appearance: none; padding-right: 40px; cursor: pointer; text-overflow: ellipsis; background-repeat: no-repeat; background-size: 6px 6px; background-position: right 19px center, right 13px center; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%); }
+select:has(option[value=""]:checked) { color: var(--color-muted); }
+@supports (appearance: base-select) {
+  select:not([multiple]), select:not([multiple])::picker(select) { appearance: base-select; }
+  select:not([multiple]) { align-items: center; }
+  select::picker-icon { display: none; }
+  select::picker(select) { margin-block: 6px; padding: 6px; border: 1px solid var(--color-border); border-radius: 10px; background: var(--color-background); color: var(--color-foreground); box-shadow: 0 16px 32px -16px rgb(42 28 21 / .45); }
+  select option { min-height: 44px; padding: 10px 12px; border-radius: 6px; font-weight: 400; cursor: pointer; }
+  select option:hover, select option:focus-visible { background: var(--color-secondary); outline: 0; }
+  select option:checked { color: var(--color-primary); font-weight: 700; }
+  select option[value=""] { color: var(--color-muted); }
+}
 .field input::placeholder, .field textarea::placeholder { color: var(--color-muted); }
 .field [aria-invalid="true"] { border-color: var(--color-error); }
 .field-hint { color: var(--color-muted); font-size: .78rem; font-weight: 400; }
