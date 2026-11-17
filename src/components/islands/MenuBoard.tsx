@@ -10,7 +10,7 @@ export default function MenuBoard({ menu }: Props) {
   const toggleDiet = (id: string) => setDiets(current => current.includes(id) ? current.filter(diet => diet !== id) : [...current, id]);
   return <section id="menu" className="menu-section section-space" aria-labelledby="menu-title">
     <div className="section-shell">
-      <div className="section-heading"><p className="section-label">{menu.label}</p><h2 id="menu-title">{menu.heading}</h2><p className="section-description">{menu.description}</p></div>
+      <div className="section-heading"><p className="section-label">{menu.label}</p><h2 id="menu-title" tabIndex={-1}>{menu.heading}</h2><p className="section-description">{menu.description}</p></div>
       <div className="menu-controls" role="group" aria-label="Menu categories">
         <button type="button" className="chip" aria-pressed={!category} onClick={() => setCategory(null)}>All</button>
         {menu.categories.map(item => <button type="button" className="chip" key={item.id} aria-pressed={category === item.id} onClick={() => setCategory(item.id)}>{item.name}</button>)}

@@ -9,7 +9,7 @@ const { business, visit } = site;
 ---
 <section id="visit" class="visit-section section-space" aria-labelledby="visit-title">
   <div class="section-shell visit-grid">
-    <div><p class="section-label">{visit.label}</p><h2 id="visit-title" class="whitespace-pre-line">{visit.heading}</h2><p class="section-description">{visit.description}</p>
+    <div><p class="section-label">{visit.label}</p><h2 id="visit-title" tabindex="-1" class="whitespace-pre-line">{visit.heading}</h2><p class="section-description">{visit.description}</p>
       <div class="hero-buttons"><a href={directionsUrl(business)} target="_blank" rel="noopener" class="button button-primary">{visit.directionsCta}<ArrowUpRight size={18} aria-hidden="true" /></a><a href={`tel:${business.phone}`} class="text-link"><Phone size={16} aria-hidden="true" />{business.phoneDisplay}</a></div>
     </div>
     <div class="visit-info">

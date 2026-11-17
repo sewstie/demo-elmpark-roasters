@@ -29,7 +29,7 @@ export default function CateringCalculator({ catering, business, demo: siteDemo 
     } catch { setStatus('error'); }
   }
   return <section id="catering" className="section-shell section-space catering-grid" aria-labelledby="catering-title">
-    <div><p className="section-label">{catering.label}</p><h2 id="catering-title" className="whitespace-pre-line">{catering.heading}</h2><p className="section-description">{catering.description}</p><p className="catering-note">{catering.note}</p></div>
+    <div><p className="section-label">{catering.label}</p><h2 id="catering-title" tabIndex={-1} className="whitespace-pre-line">{catering.heading}</h2><p className="section-description">{catering.description}</p><p className="catering-note">{catering.note}</p></div>
     {status === 'success' ? <div className="form-success" role="status"><CheckCircle2 size={36} aria-hidden="true" /><p>{catering.success}</p></div> : <form onSubmit={handleSubmit(submit)} className="catering-form" noValidate>
       <label className="field">Headcount<input type="number" inputMode="numeric" min={min} max={max} {...register('headcount', { valueAsNumber: true })} aria-invalid={!inRange} aria-describedby="headcount-hint" /><span id="headcount-hint" className={inRange ? 'field-hint' : 'field-error'}>Catering is available for {min} to {max} guests.</span></label>
       <fieldset className="box-options"><legend>Box style</legend>{boxes.map(item => <label className="box-option" key={item.id}>
