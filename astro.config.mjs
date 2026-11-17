@@ -15,7 +15,7 @@ export default defineConfig({
     ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io`
     : process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : 'http://localhost:4321',
+      : 'https://sewstie.github.io', // local builds point at the deployed demo, never localhost
   base: isGitHubPages && repoName ? `/${repoName}` : '/',
   integrations: [react(), ...(isGitHubPages ? [{
     name: 'static-demo',
