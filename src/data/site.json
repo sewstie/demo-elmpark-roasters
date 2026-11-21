@@ -1,107 +1,526 @@
 {
   "demoMode": true,
   "demoBanner": true,
-  "banner": { "text": "Demo site by Vladislav Hushcha — want one for your business? →", "shortText": "Demo by Vladislav Hushcha · Get yours →", "href": "https://web.vladislavhushcha.me", "dismissLabel": "Dismiss demo notice" },
+  "banner": {
+    "text": "Demo site by Vladislav Hushcha — want one for your business? →",
+    "shortText": "Demo by Vladislav Hushcha · Get yours →",
+    "href": "https://web.vladislavhushcha.me",
+    "dismissLabel": "Dismiss demo notice"
+  },
   "business": {
-    "name": "Elm Park Roasters & Artisan Bakery", "shortName": "Elm Park Roasters", "descriptor": "Coffee roasters & artisan bakery",
-    "phone": "+15085550148", "phoneDisplay": "(508) 555-0148", "email": "hello@elmparkroasters.example",
-    "street": "27 Roasters Row", "city": "Worcester", "region": "MA", "postalCode": "01609",
-    "serviceArea": "Worcester County, MA", "timeZone": "America/New_York",
+    "name": "Elm Park Roasters & Artisan Bakery",
+    "shortName": "Elm Park Roasters",
+    "descriptor": "Coffee roasters & artisan bakery",
+    "phone": "+15085550148",
+    "phoneDisplay": "(508) 555-0149",
+    "email": "hello@elmparkroasters.example",
+    "street": "27 Roasters Row",
+    "city": "Worcester",
+    "region": "MA",
+    "postalCode": "01609",
+    "serviceArea": "Worcester County, MA",
+    "timeZone": "America/New_York",
     "hours": [
-      { "open": "07:00", "close": "16:00" },
-      { "open": "06:30", "close": "17:00" },
-      { "open": "06:30", "close": "17:00" },
-      { "open": "06:30", "close": "17:00" },
-      { "open": "06:30", "close": "17:00" },
-      { "open": "06:30", "close": "17:00" },
-      { "open": "07:00", "close": "16:00" }
+      {
+        "open": "07:00",
+        "close": "16:00"
+      },
+      {
+        "open": "06:30",
+        "close": "17:00"
+      },
+      {
+        "open": "06:30",
+        "close": "17:00"
+      },
+      {
+        "open": "06:30",
+        "close": "17:00"
+      },
+      {
+        "open": "06:30",
+        "close": "17:00"
+      },
+      {
+        "open": "06:30",
+        "close": "17:00"
+      },
+      {
+        "open": "07:00",
+        "close": "16:00"
+      }
     ],
-    "indicators": [ { "id": "wifi", "label": "Free Wi-Fi", "active": true }, { "id": "seating", "label": "Seats available", "active": true } ]
+    "indicators": [
+      {
+        "id": "wifi",
+        "label": "Free Wi-Fi",
+        "active": true
+      },
+      {
+        "id": "seating",
+        "label": "Seats available",
+        "active": true
+      }
+    ]
   },
-  "seo": { "title": "Elm Park Roasters & Artisan Bakery | Coffee, Pastries & Catering in Worcester, MA", "description": "Freshly roasted coffee and locally baked pastries in Worcester, MA. Browse the live menu with vegan, gluten-free and nut-free filters, or price office catering in seconds." },
-  "nav": [ { "label": "Menu", "href": "#menu" }, { "label": "Catering", "href": "#catering" }, { "label": "Reviews", "href": "#reviews" }, { "label": "Visit", "href": "#visit" } ],
+  "seo": {
+    "title": "Elm Park Roasters & Artisan Bakery | Coffee, Pastries & Catering in Worcester, MA",
+    "description": "Freshly roasted coffee and locally baked pastries in Worcester, MA. Browse the live menu with vegan, gluten-free and nut-free filters, or price office catering in seconds."
+  },
+  "nav": [
+    {
+      "label": "Menu",
+      "href": "#menu"
+    },
+    {
+      "label": "Catering",
+      "href": "#catering"
+    },
+    {
+      "label": "Reviews",
+      "href": "#reviews"
+    },
+    {
+      "label": "Visit",
+      "href": "#visit"
+    }
+  ],
   "hero": {
-    "eyebrow": "Worcester’s neighborhood roastery & bakery", "heading": "Freshly roasted,\nlocally baked,\npouring daily.",
+    "eyebrow": "Worcester’s neighborhood roastery & bakery",
+    "heading": "Freshly roasted,\nlocally baked,\npouring daily.",
     "description": "Skip the PDF menu and order in seconds. Today’s espresso, pastries and seasonal specials are all right here, with live prices and dietary filters.",
-    "primaryCta": "Browse the menu", "secondaryCta": "Price office catering", "note": "Roasted in small batches. Baked before sunrise.",
-    "image": { "file": "hero.jpg", "alt": "Barista pouring steamed milk into a latte, finishing a leaf pattern in the foam" },
-    "specialsLabel": "On the specials board", "specialsCategory": "seasonal",
-    "specialties": [ "Small-batch espresso", "Baked fresh daily", "Vegan & gluten-free options", "Office & event catering" ]
+    "primaryCta": "Browse the menu",
+    "secondaryCta": "Price office catering",
+    "note": "Roasted in small batches. Baked before sunrise.",
+    "image": {
+      "file": "hero.jpg",
+      "alt": "Barista pouring steamed milk into a latte, finishing a leaf pattern in the foam"
+    },
+    "specialsLabel": "On the specials board",
+    "specialsCategory": "seasonal",
+    "specialties": [
+      "Small-batch espresso",
+      "Baked fresh daily",
+      "Vegan & gluten-free options",
+      "Office & event catering"
+    ]
   },
-  "intro": { "label": "A proper neighborhood counter", "heading": "Good coffee shouldn’t\nneed a download.", "description": "No pinch-and-zoom PDFs, no guessing what’s left in the case. See what we’re pouring and baking today, filter for how you eat, and walk in knowing your order.", "link": "See today’s menu",
+  "intro": {
+    "label": "A proper neighborhood counter",
+    "heading": "Good coffee shouldn’t\nneed a download.",
+    "description": "No pinch-and-zoom PDFs, no guessing what’s left in the case. See what we’re pouring and baking today, filter for how you eat, and walk in knowing your order.",
+    "link": "See today’s menu",
     "photos": [
-      { "file": "latte.jpg", "alt": "Latte with rosetta latte art in a white cup, seen from above", "item": "elm-park-latte" },
-      { "file": "croissant.jpg", "alt": "Golden butter croissant on a white plate on a wooden table", "item": "butter-croissant" }
-    ] },
+      {
+        "file": "latte.jpg",
+        "alt": "Latte with rosetta latte art in a white cup, seen from above",
+        "item": "elm-park-latte"
+      },
+      {
+        "file": "croissant.jpg",
+        "alt": "Golden butter croissant on a white plate on a wooden table",
+        "item": "butter-croissant"
+      }
+    ]
+  },
   "menu": {
-    "label": "Today’s menu", "heading": "Pick a category. Filter how you eat.", "description": "Tap a category, then narrow by dietary need. Prices update the moment we change them.",
+    "label": "Today’s menu",
+    "heading": "Pick a category. Filter how you eat.",
+    "description": "Tap a category, then narrow by dietary need. Prices update the moment we change them.",
     "note": "Sample menu and prices for this demo. Our kitchen handles wheat, dairy, eggs and tree nuts. Please tell us about allergies when you order.",
-    "categories": [ { "id": "espresso", "name": "Signature Espresso" }, { "id": "pastries", "name": "Artisanal Pastries" }, { "id": "seasonal", "name": "Seasonal Specials" } ],
-    "diets": [ { "id": "vegan", "name": "Vegan" }, { "id": "gluten-free", "name": "Gluten-Free" }, { "id": "nut-free", "name": "Nut-Free" } ],
+    "categories": [
+      {
+        "id": "espresso",
+        "name": "Signature Espresso"
+      },
+      {
+        "id": "pastries",
+        "name": "Artisanal Pastries"
+      },
+      {
+        "id": "seasonal",
+        "name": "Seasonal Specials"
+      }
+    ],
+    "diets": [
+      {
+        "id": "vegan",
+        "name": "Vegan"
+      },
+      {
+        "id": "gluten-free",
+        "name": "Gluten-Free"
+      },
+      {
+        "id": "nut-free",
+        "name": "Nut-Free"
+      }
+    ],
     "items": [
-      { "id": "elm-park-latte", "name": "Elm Park Latte", "description": "Double shot, steamed whole milk and house maple-vanilla syrup.", "price": 5.25, "category": "espresso", "diets": [ "gluten-free", "nut-free" ] },
-      { "id": "cortado", "name": "Cortado", "description": "Equal parts espresso and silky steamed milk.", "price": 4.25, "category": "espresso", "diets": [ "gluten-free", "nut-free" ] },
-      { "id": "oat-flat-white", "name": "Oat Flat White", "description": "Ristretto shots under velvety oat milk microfoam.", "price": 5, "category": "espresso", "diets": [ "vegan", "gluten-free", "nut-free" ] },
-      { "id": "americano", "name": "House Americano", "description": "Our rotating single-origin espresso over hot water.", "price": 3.75, "category": "espresso", "diets": [ "vegan", "gluten-free", "nut-free" ] },
-      { "id": "cold-brew", "name": "Slow-Steeped Cold Brew", "description": "Steeped 18 hours for a smooth, chocolatey finish.", "price": 4.5, "category": "espresso", "diets": [ "vegan", "gluten-free", "nut-free" ] },
-      { "id": "almond-mocha", "name": "Dark Chocolate Almond Mocha", "description": "Espresso, dark chocolate and steamed almond milk.", "price": 5.75, "category": "espresso", "diets": [ "vegan", "gluten-free" ] },
-      { "id": "butter-croissant", "name": "Butter Croissant", "description": "Three-day laminated dough, baked golden each morning.", "price": 4.25, "category": "pastries", "diets": [ "nut-free" ] },
-      { "id": "almond-croissant", "name": "Twice-Baked Almond Croissant", "description": "Filled with almond cream and finished with toasted almonds.", "price": 5, "category": "pastries", "diets": [] },
-      { "id": "morning-bun", "name": "Cinnamon Morning Bun", "description": "Croissant dough rolled in cinnamon sugar and orange zest.", "price": 4.5, "category": "pastries", "diets": [ "nut-free" ] },
-      { "id": "cheddar-scone", "name": "Cheddar Chive Scone", "description": "Sharp cheddar, fresh chives and a crisp, buttery edge.", "price": 4, "category": "pastries", "diets": [ "nut-free" ] },
-      { "id": "flourless-brownie", "name": "Flourless Chocolate Brownie", "description": "Dense, fudgy and made without wheat flour.", "price": 4.25, "category": "pastries", "diets": [ "gluten-free", "nut-free" ] },
-      { "id": "banana-walnut-loaf", "name": "Banana Walnut Loaf", "description": "A thick slice of our dairy-free, egg-free banana bread.", "price": 3.95, "category": "pastries", "diets": [ "vegan" ] },
-      { "id": "oat-cookie", "name": "Oat & Sea Salt Cookie", "description": "Chewy oats, dark chocolate and flaky sea salt.", "price": 3.25, "category": "pastries", "diets": [ "vegan", "nut-free" ] },
-      { "id": "maple-pumpkin-latte", "name": "Maple Pumpkin Latte", "description": "Real pumpkin, local maple syrup and warm spice.", "price": 5.95, "category": "seasonal", "diets": [ "gluten-free", "nut-free" ] },
-      { "id": "apple-fritter", "name": "Cider-Glazed Apple Fritter", "description": "Orchard apples in a crisp fritter with a cider glaze.", "price": 4.75, "category": "seasonal", "diets": [ "vegan", "nut-free" ] },
-      { "id": "pear-danish", "name": "Spiced Pear Danish", "description": "Poached pear, vanilla custard and a hint of cardamom.", "price": 5.25, "category": "seasonal", "diets": [ "nut-free" ] },
-      { "id": "peppermint-cocoa", "name": "Peppermint Oat Cocoa", "description": "Dark hot chocolate with oat milk and peppermint.", "price": 4.95, "category": "seasonal", "diets": [ "vegan", "gluten-free", "nut-free" ] }
+      {
+        "id": "elm-park-latte",
+        "name": "Elm Park Latte",
+        "description": "Double shot, steamed whole milk and house maple-vanilla syrup.",
+        "price": 5.25,
+        "category": "espresso",
+        "diets": [
+          "gluten-free",
+          "nut-free"
+        ]
+      },
+      {
+        "id": "cortado",
+        "name": "Cortado",
+        "description": "Equal parts espresso and silky steamed milk.",
+        "price": 4.25,
+        "category": "espresso",
+        "diets": [
+          "gluten-free",
+          "nut-free"
+        ]
+      },
+      {
+        "id": "oat-flat-white",
+        "name": "Oat Flat White",
+        "description": "Ristretto shots under velvety oat milk microfoam.",
+        "price": 5,
+        "category": "espresso",
+        "diets": [
+          "vegan",
+          "gluten-free",
+          "nut-free"
+        ]
+      },
+      {
+        "id": "americano",
+        "name": "House Americano",
+        "description": "Our rotating single-origin espresso over hot water.",
+        "price": 3.75,
+        "category": "espresso",
+        "diets": [
+          "vegan",
+          "gluten-free",
+          "nut-free"
+        ]
+      },
+      {
+        "id": "cold-brew",
+        "name": "Slow-Steeped Cold Brew",
+        "description": "Steeped 18 hours for a smooth, chocolatey finish.",
+        "price": 4.5,
+        "category": "espresso",
+        "diets": [
+          "vegan",
+          "gluten-free",
+          "nut-free"
+        ]
+      },
+      {
+        "id": "almond-mocha",
+        "name": "Dark Chocolate Almond Mocha",
+        "description": "Espresso, dark chocolate and steamed almond milk.",
+        "price": 5.75,
+        "category": "espresso",
+        "diets": [
+          "vegan",
+          "gluten-free"
+        ]
+      },
+      {
+        "id": "butter-croissant",
+        "name": "Butter Croissant",
+        "description": "Three-day laminated dough, baked golden each morning.",
+        "price": 4.25,
+        "category": "pastries",
+        "diets": [
+          "nut-free"
+        ]
+      },
+      {
+        "id": "almond-croissant",
+        "name": "Twice-Baked Almond Croissant",
+        "description": "Filled with almond cream and finished with toasted almonds.",
+        "price": 5,
+        "category": "pastries",
+        "diets": []
+      },
+      {
+        "id": "morning-bun",
+        "name": "Cinnamon Morning Bun",
+        "description": "Croissant dough rolled in cinnamon sugar and orange zest.",
+        "price": 4.5,
+        "category": "pastries",
+        "diets": [
+          "nut-free"
+        ]
+      },
+      {
+        "id": "cheddar-scone",
+        "name": "Cheddar Chive Scone",
+        "description": "Sharp cheddar, fresh chives and a crisp, buttery edge.",
+        "price": 4,
+        "category": "pastries",
+        "diets": [
+          "nut-free"
+        ]
+      },
+      {
+        "id": "flourless-brownie",
+        "name": "Flourless Chocolate Brownie",
+        "description": "Dense, fudgy and made without wheat flour.",
+        "price": 4.25,
+        "category": "pastries",
+        "diets": [
+          "gluten-free",
+          "nut-free"
+        ]
+      },
+      {
+        "id": "banana-walnut-loaf",
+        "name": "Banana Walnut Loaf",
+        "description": "A thick slice of our dairy-free, egg-free banana bread.",
+        "price": 3.95,
+        "category": "pastries",
+        "diets": [
+          "vegan"
+        ]
+      },
+      {
+        "id": "oat-cookie",
+        "name": "Oat & Sea Salt Cookie",
+        "description": "Chewy oats, dark chocolate and flaky sea salt.",
+        "price": 3.25,
+        "category": "pastries",
+        "diets": [
+          "vegan",
+          "nut-free"
+        ]
+      },
+      {
+        "id": "maple-pumpkin-latte",
+        "name": "Maple Pumpkin Latte",
+        "description": "Real pumpkin, local maple syrup and warm spice.",
+        "price": 5.95,
+        "category": "seasonal",
+        "diets": [
+          "gluten-free",
+          "nut-free"
+        ]
+      },
+      {
+        "id": "apple-fritter",
+        "name": "Cider-Glazed Apple Fritter",
+        "description": "Orchard apples in a crisp fritter with a cider glaze.",
+        "price": 4.75,
+        "category": "seasonal",
+        "diets": [
+          "vegan",
+          "nut-free"
+        ]
+      },
+      {
+        "id": "pear-danish",
+        "name": "Spiced Pear Danish",
+        "description": "Poached pear, vanilla custard and a hint of cardamom.",
+        "price": 5.25,
+        "category": "seasonal",
+        "diets": [
+          "nut-free"
+        ]
+      },
+      {
+        "id": "peppermint-cocoa",
+        "name": "Peppermint Oat Cocoa",
+        "description": "Dark hot chocolate with oat milk and peppermint.",
+        "price": 4.95,
+        "category": "seasonal",
+        "diets": [
+          "vegan",
+          "gluten-free",
+          "nut-free"
+        ]
+      }
     ]
   },
   "catering": {
-    "label": "Office & event catering", "heading": "Feed the meeting.\nKnow the total first.", "description": "Enter your headcount, choose a box style and see your price instantly. Three quick steps, then we’ll confirm the details with you.",
+    "label": "Office & event catering",
+    "heading": "Feed the meeting.\nKnow the total first.",
+    "description": "Enter your headcount, choose a box style and see your price instantly. Three quick steps, then we’ll confirm the details with you.",
     "note": "Sample pricing for this demo. Totals are estimates before tax and delivery.",
-    "privacy": "We only use your details to reply to this inquiry. No marketing, ever.", "totalLabel": "Estimated total",
+    "privacy": "We only use your details to reply to this inquiry. No marketing, ever.",
+    "totalLabel": "Estimated total",
     "error": "Your inquiry could not be sent. Please try again or call us directly.",
-    "minHeadcount": 8, "maxHeadcount": 150, "leadDays": 2,
+    "minHeadcount": 8,
+    "maxHeadcount": 150,
+    "leadDays": 2,
     "boxes": [
-      { "id": "morning-meeting", "name": "Morning Meeting Box", "description": "Fresh drip coffee, assorted pastries, cups and fixings.", "pricePerPerson": 9.5 },
-      { "id": "full-breakfast", "name": "Full Breakfast Box", "description": "Coffee, pastries, yogurt parfaits and seasonal fruit.", "pricePerPerson": 14 },
-      { "id": "afternoon-pick-me-up", "name": "Afternoon Pick-Me-Up", "description": "Cold brew, cookies and flourless brownies.", "pricePerPerson": 8 }
+      {
+        "id": "morning-meeting",
+        "name": "Morning Meeting Box",
+        "description": "Fresh drip coffee, assorted pastries, cups and fixings.",
+        "pricePerPerson": 9.5
+      },
+      {
+        "id": "full-breakfast",
+        "name": "Full Breakfast Box",
+        "description": "Coffee, pastries, yogurt parfaits and seasonal fruit.",
+        "pricePerPerson": 14
+      },
+      {
+        "id": "afternoon-pick-me-up",
+        "name": "Afternoon Pick-Me-Up",
+        "description": "Cold brew, cookies and flourless brownies.",
+        "pricePerPerson": 8
+      }
     ],
     "timeWindows": [
-      { "id": "early-morning", "open": "07:00", "close": "09:00" }, { "id": "mid-morning", "open": "09:00", "close": "11:00" },
-      { "id": "midday", "open": "11:00", "close": "13:00" }, { "id": "afternoon", "open": "13:00", "close": "15:00" }
+      {
+        "id": "early-morning",
+        "open": "07:00",
+        "close": "09:00"
+      },
+      {
+        "id": "mid-morning",
+        "open": "09:00",
+        "close": "11:00"
+      },
+      {
+        "id": "midday",
+        "open": "11:00",
+        "close": "13:00"
+      },
+      {
+        "id": "afternoon",
+        "open": "13:00",
+        "close": "15:00"
+      }
     ],
-    "steps": { "order": { "short": "Order", "title": "Your order" }, "details": { "short": "Details", "title": "Your details" }, "review": { "short": "Review", "title": "Review" } },
-    "fields": {
-      "headcount": "Headcount", "decrease": "Remove one guest", "increase": "Add one guest", "headcountHint": "guests per order",
-      "box": "Box style", "perPerson": "per person", "date": "Event date", "datePlaceholder": "Select a date", "previousMonth": "Previous month", "nextMonth": "Next month", "dateHint": "Orders need at least 2 days’ notice.",
-      "time": "Time window", "timePlaceholder": "Select a time window",
-      "fulfillment": "Pickup or delivery", "pickup": "Pickup", "delivery": "Delivery",
-      "address": "Delivery street address", "deliveryNote": "We deliver within 5 miles of the café.",
-      "notes": "Dietary notes", "notesPlaceholder": "Allergies, vegan or gluten-free counts…", "optional": "optional",
-      "name": "Your name", "company": "Company", "contact": "Email or phone", "contactHint": "One is enough. We’ll use it to confirm your order."
+    "steps": {
+      "order": {
+        "short": "Order",
+        "title": "Your order"
+      },
+      "details": {
+        "short": "Details",
+        "title": "Your details"
+      },
+      "review": {
+        "short": "Review",
+        "title": "Review"
+      }
     },
-    "actions": { "back": "Back", "next": "Continue", "edit": "Edit", "submit": "Send catering inquiry", "sending": "Sending inquiry…", "calendar": "Add to calendar", "restart": "Start another order" },
-    "success": { "title": "Inquiry sent.", "body": "We’ll confirm within 1 business day.", "demoTag": "Demo — nothing was sent", "emailTitle": "What the owner receives", "emailSubject": "New catering inquiry", "emailName": "Name", "emailCompany": "Company", "emailContact": "Contact", "emailSubmitted": "Submitted", "calendarTitle": "Catering order" }
+    "fields": {
+      "headcount": "Headcount",
+      "decrease": "Remove one guest",
+      "increase": "Add one guest",
+      "headcountHint": "guests per order",
+      "box": "Box style",
+      "perPerson": "per person",
+      "date": "Event date",
+      "datePlaceholder": "Select a date",
+      "previousMonth": "Previous month",
+      "nextMonth": "Next month",
+      "dateHint": "Orders need at least 2 days’ notice.",
+      "time": "Time window",
+      "timePlaceholder": "Select a time window",
+      "fulfillment": "Pickup or delivery",
+      "pickup": "Pickup",
+      "delivery": "Delivery",
+      "address": "Delivery street address",
+      "deliveryNote": "We deliver within 5 miles of the café.",
+      "notes": "Dietary notes",
+      "notesPlaceholder": "Allergies, vegan or gluten-free counts…",
+      "optional": "optional",
+      "name": "Your name",
+      "company": "Company",
+      "contact": "Email or phone",
+      "contactHint": "One is enough. We’ll use it to confirm your order."
+    },
+    "actions": {
+      "back": "Back",
+      "next": "Continue",
+      "edit": "Edit",
+      "submit": "Send catering inquiry",
+      "sending": "Sending inquiry…",
+      "calendar": "Add to calendar",
+      "restart": "Start another order"
+    },
+    "success": {
+      "title": "Inquiry sent.",
+      "body": "We’ll confirm within 1 business day.",
+      "demoTag": "Demo — nothing was sent",
+      "emailTitle": "What the owner receives",
+      "emailSubject": "New catering inquiry",
+      "emailName": "Name",
+      "emailCompany": "Company",
+      "emailContact": "Contact",
+      "emailSubmitted": "Submitted",
+      "calendarTitle": "Catering order"
+    }
   },
   "reviews": {
-    "label": "From the neighborhood", "heading": "Regulars say it best.", "disclaimer": "Sample testimonials for this demo. Not verified customer reviews.",
+    "label": "From the neighborhood",
+    "heading": "Regulars say it best.",
+    "disclaimer": "Sample testimonials for this demo. Not verified customer reviews.",
     "items": [
-      { "quote": "I checked the menu on my walk over, filtered for gluten-free and had my order ready before I reached the counter. The flourless brownie is unreal.", "name": "Sample guest A", "detail": "Regular · Gluten-free", "stars": 5 },
-      { "quote": "I priced breakfast for our 40-person staff meeting in under a minute and the total matched the invoice. Easiest catering order I’ve placed.", "name": "Sample guest B", "detail": "Office manager · Catering order", "stars": 5 },
-      { "quote": "The cortado is the best in the city, and I love that I can see whether there’s a seat before I pack up my laptop.", "name": "Sample guest C", "detail": "Student · Weekday regular", "stars": 5 }
+      {
+        "quote": "I checked the menu on my walk over, filtered for gluten-free and had my order ready before I reached the counter. The flourless brownie is unreal.",
+        "name": "Sample guest A",
+        "detail": "Regular · Gluten-free",
+        "stars": 5
+      },
+      {
+        "quote": "I priced breakfast for our 40-person staff meeting in under a minute and the total matched the invoice. Easiest catering order I’ve placed.",
+        "name": "Sample guest B",
+        "detail": "Office manager · Catering order",
+        "stars": 5
+      },
+      {
+        "quote": "The cortado is the best in the city, and I love that I can see whether there’s a seat before I pack up my laptop.",
+        "name": "Sample guest C",
+        "detail": "Student · Weekday regular",
+        "stars": 5
+      }
     ]
   },
-  "faq": { "heading": "A few things worth knowing.", "items": [
-    { "question": "How much notice do you need for catering?", "answer": "We ask for at least 48 hours so everything is baked fresh for your order. For larger events, a week’s notice helps us reserve the oven time." },
-    { "question": "Is the catering total the final price?", "answer": "The calculator gives an estimate based on headcount and box style, before tax and delivery. We confirm the final price with you before anything is charged." },
-    { "question": "Does sending an inquiry confirm my order?", "answer": "Not yet. We’ll contact you to confirm availability, the menu and the total. No payment is taken online." },
-    { "question": "Can you accommodate allergies?", "answer": "Use the vegan, gluten-free and nut-free filters to find options. Our kitchen handles wheat, dairy, eggs and tree nuts, so we can’t guarantee an allergen-free environment. Please ask our team before ordering." },
-    { "question": "Do you deliver catering orders?", "answer": "Yes, we deliver to offices, campuses and events across Worcester County. Pickup from the shop is always available." }
-  ] },
-  "visit": { "label": "Come say hello", "heading": "Find us by the park.", "description": "Stop in for a pour-over, grab a box for the office, or settle in with the Wi-Fi. Call ahead and we’ll have your order waiting.", "directionsCta": "Get directions",
-    "image": { "file": "interior.jpg", "alt": "Café interior with an exposed brick wall, warm pendant lights and a long wooden table" } },
-  "footer": { "description": "Small-batch coffee & artisan pastries in Worcester, MA.", "copyright": "Elm Park Roasters & Artisan Bakery. All rights reserved.", "demoNotice": "Concept website for a fictional business. Sample menu, pricing, location and reviews. Catering inquiries are simulated in demo mode and nothing is sent." }
+  "faq": {
+    "heading": "A few things worth knowing.",
+    "items": [
+      {
+        "question": "How much notice do you need for catering?",
+        "answer": "We ask for at least 48 hours so everything is baked fresh for your order. For larger events, a week’s notice helps us reserve the oven time."
+      },
+      {
+        "question": "Is the catering total the final price?",
+        "answer": "The calculator gives an estimate based on headcount and box style, before tax and delivery. We confirm the final price with you before anything is charged."
+      },
+      {
+        "question": "Does sending an inquiry confirm my order?",
+        "answer": "Not yet. We’ll contact you to confirm availability, the menu and the total. No payment is taken online."
+      },
+      {
+        "question": "Can you accommodate allergies?",
+        "answer": "Use the vegan, gluten-free and nut-free filters to find options. Our kitchen handles wheat, dairy, eggs and tree nuts, so we can’t guarantee an allergen-free environment. Please ask our team before ordering."
+      },
+      {
+        "question": "Do you deliver catering orders?",
+        "answer": "Yes, we deliver to offices, campuses and events across Worcester County. Pickup from the shop is always available."
+      }
+    ]
+  },
+  "visit": {
+    "label": "Come say hello",
+    "heading": "Find us by the park.",
+    "description": "Stop in for a pour-over, grab a box for the office, or settle in with the Wi-Fi. Call ahead and we’ll have your order waiting.",
+    "directionsCta": "Get directions",
+    "image": {
+      "file": "interior.jpg",
+      "alt": "Café interior with an exposed brick wall, warm pendant lights and a long wooden table"
+    }
+  },
+  "footer": {
+    "description": "Small-batch coffee & artisan pastries in Worcester, MA.",
+    "copyright": "Elm Park Roasters & Artisan Bakery. All rights reserved.",
+    "demoNotice": "Concept website for a fictional business. Sample menu, pricing, location and reviews. Catering inquiries are simulated in demo mode and nothing is sent."
+  }
 }
